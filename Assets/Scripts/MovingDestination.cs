@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class Teleport : MonoBehaviour
+public class MovingDestination : MonoBehaviour
 {
-    public float time;
+    public float t;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -13,12 +13,12 @@ public class Teleport : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime;
+        t += Time.deltaTime;
 
-        if (time > 3)
+        if (t > 1)
         {
             transform.position = new Vector2(Random.Range(-10, 10), Random.Range(-5, 5));
-            time = 0;
+            t = 0;
         }
     }
 }
