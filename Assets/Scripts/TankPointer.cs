@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PointMe : MonoBehaviour
+public class TankPointer : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,6 +19,9 @@ public class PointMe : MonoBehaviour
         Vector2 direction = mousePos - (Vector2)transform.position;
 
         //set our transform.up direction to equal that
-        transform.up = direction;
+        if (mousePos.y > 0)
+        {
+            transform.up = direction;
+        }
     }
 }
